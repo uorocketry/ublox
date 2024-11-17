@@ -49,6 +49,7 @@ fn test_ubx_packet_recv_simple() {
 
             #[doc = "Some comment"]
             #[doc = "Contains a reference to an underlying buffer, contains accessor methods to retrieve data."]
+            #[derive(Clone, defmt::Format, serde::Deserialize)]
             pub struct TestRef<'a>(&'a [u8]);
 
             impl<'a> TestRef<'a> {
@@ -237,6 +238,7 @@ fn test_ubx_packet_recv_dyn_len() {
 
             #[doc = ""]
             #[doc = "Contains a reference to an underlying buffer, contains accessor methods to retrieve data."]
+            #[derive(Clone, defmt::Format, serde::Deserialize)]
             pub struct TestRef<'a>(&'a [u8]);
 
             impl<'a> TestRef<'a> {
