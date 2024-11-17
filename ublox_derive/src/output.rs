@@ -256,6 +256,7 @@ pub fn generate_recv_code_for_packet(pack_descr: &PackDesc) -> TokenStream {
     quote! {
         #[doc = #struct_comment]
         #[doc = "Contains a reference to an underlying buffer, contains accessor methods to retrieve data."]
+        #[derive(Clone, defmt::Format, serde::Deserialize)]
         pub struct #ref_name<'a>(&'a [u8]);
         impl<'a> #ref_name<'a> {
             #[inline]
